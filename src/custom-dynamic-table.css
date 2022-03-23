@@ -1,0 +1,124 @@
+.custom-dynamic-table-wrapper .sort-down,
+.custom-dynamic-table-wrapper .sort-up {
+    width: 12px;
+    position: absolute;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.custom-dynamic-table-wrapper .sort-down {
+    top: 25px;
+}
+
+.custom-dynamic-table-wrapper .table-head {
+    padding: 0.7rem 0.5rem;
+    vertical-align: baseline;
+}
+
+.custom-dynamic-table-wrapper .column-names-list {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-align: left;
+    padding-left: 0;
+    font-size: 14px;
+    position: absolute;
+    right: 10px;
+    z-index: 9;
+    background-color: #fff;
+}
+
+.custom-table-column-reorder-list {
+    padding-left: 0;
+}
+.custom-dynamic-table-wrapper .column-names-list li,
+.custom-table-column-reorder-list li {
+    list-style: none;
+    padding: 0 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    background:#eee;
+}
+.custom-dynamic-table-wrapper .column-names-list li:hover,
+.custom-table-column-reorder-list li:hover {
+    background: darken(#eee, 5%);
+}
+
+.custom-dynamic-table-wrapper .column-names-list li .form-check,
+.custom-table-column-reorder-list li .form-check {
+    margin-bottom: 0;
+}
+
+.custom-dynamic-table-wrapper .column-names-list li .form-check-input,
+.custom-table-column-reorder-list li .form-check-input {
+    margin-top: 8px;
+}
+  
+.placeholder {
+    background: rgb(255,240,120);
+}
+.placeholder:before {
+    content: "Drop here";
+    color: rgb(225,210,90);
+}
+
+.custom-dynamic-table-wrapper .column-names-list li label {
+    width: 100%;
+    cursor: pointer;
+    padding: 4px 0;
+}
+
+.custom-dynamic-table-wrapper .column-names-list li:last-child {
+    border-bottom: 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.custom-dynamic-table-wrapper .column-names-list li:first-child {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.custom-dynamic-table-wrapper .column-names-list li:hover {
+    background-color: #ccc;
+    font-weight: bold;
+}
+
+.custom-dynamic-table-wrapper .column-dropdown-wrapper {
+    width: 100%;
+    max-width: 200px;
+}
+
+.custom-dynamic-table-wrapper .float-right {
+    float: right;
+}
+
+.custom-dynamic-table-wrapper .float-left {
+    float: left;
+}
+
+.custom-dynamic-table-wrapper .text-align-right {
+    text-align: right;
+}
+
+.custom-dynamic-table-wrapper .text-align-left {
+    text-align: left;
+}
+
+.custom-dynamic-table-wrapper .change-column-order-link {
+    font-size: 14px;
+}
+
+.custom-dynamic-table-wrapper .table-row-selected {
+    background-color: #ccc;
+    font-weight: 600;
+}
+
+.custom-dynamic-table-wrapper .only-photo-column {
+    width: 40px;
+    height: 40px;
+}
+
+.custom-dynamic-table-wrapper .react-datepicker-popper {
+    z-index: 9;
+}
