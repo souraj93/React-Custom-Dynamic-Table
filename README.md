@@ -42,6 +42,18 @@ visibleColumns: [
 ]
 ```
 
+**uniqueRowKey**
+
+Type: string
+
+Description- this value is used to identify each row with a unique identifier. key present within the table data.
+
+Example- 
+
+```
+uniqueRowKey: "id"
+```
+
 **skip**
 
 Type: number
@@ -73,7 +85,7 @@ Type: boolean
 
 Description- Default value is false. If you want multiple column sorting option then make it as true.
 
-**Note**: multisort: true option is only available if pagination, filtering, sorting are being handled from server side, not from UI (if allData: false). If you use allData: true, then sort with single column will be applied.
+**Note**: multisort: true option is only available if pagination, filtering, sorting are being handled from server side, not from UI (if allData: false). If you use allData: true, then sort with single column will be applied only.
 
 Example- 
 
@@ -86,7 +98,7 @@ Type: boolean
 
 Description- Default value is false. If you want filter column option then make it as true.
 
-**Note**: filter with multiple column is only available if pagination, filtering, sorting are being handled from server side, not from UI (if allData: false). If you use allData: true, then filter with single column will be applied.
+**Note**: filter with multiple column is only available if pagination, filtering, sorting are being handled from server side, not from UI (if allData: false). If you use allData: true, then filter with single column will be applied only.
 
 Example- 
 
@@ -131,6 +143,92 @@ radioSelectable: false
 ```
 
 **Note**: Please do not use both radioSelectable and multipleSelectable as true.
+
+**allData**
+
+Type: boolean
+
+Description- Default value is false. If you want to handle filtering, sorting, pagination of the table data from the UI only (don't want to call API for the functionalities) then make it as true.
+
+**Note**: If you use allData: true, then filter & sort with single column will be applied only. sort with multiple column (multisort: true) & filter with multiple column will not work.
+
+Example- 
+
+```
+allData: false
+```
+
+**showHideColumn**
+
+Type: boolean
+
+Description- Default value is false. If you want to display the column selector dropdown by which you can show/ hide a column according to your need, then you can set it as true.
+
+Example- 
+
+```
+showHideColumn: true
+```
+
+**reOrderColumn**
+
+Type: boolean
+
+Description- Default value is false. If you want to display the reorder column link by which you can change the order of a column according to your need, then you can set it as true.
+
+Example- 
+
+```
+reOrderColumn: true
+```
+
+**reOrderText**
+
+Type: string
+
+Description- Default value is "Change column order". If you want to change the default text of the reorder column link then send the text as value.
+
+Example- 
+
+```
+reOrderText: "Reorder Column"
+```
+
+**noDataMessage**
+
+Type: string
+
+Description- Default value is "No Data Found!". If you want to change the default text of the no table data available (when the table data is empty), then send the text as value.
+
+Example- 
+
+```
+noDataMessage: "No Data"
+```
+
+**columnSelectorPosition**
+
+Type: string
+
+Description- Default value is "top-right". If you want to change the position of the column selector & reorder column, then send the position accordingly (top-left/bottom-left/bottom-right/top-right). It will be displayed in that position according to the table.
+
+Example- 
+
+```
+columnSelectorPosition: "top-left"
+```
+
+**paginationPosition**
+
+Type: string
+
+Description- Default value is "top-right". If you want to change the position of the pagination option, then send the position accordingly (top-left/bottom-left/bottom-right/top-right). It will be displayed in that position according to the table.
+
+Example- 
+
+```
+paginationPosition: "top-left"
+```
 
 You can use the below configuration object to display the table according to your need.
 ```
