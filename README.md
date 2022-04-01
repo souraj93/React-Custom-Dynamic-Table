@@ -42,11 +42,141 @@ visibleColumns: [
 ]
 ```
 
+**headerFormat**
+
+Type: object
+
+Description- This is the configuration object for the table header
+
+Example-
+
+If the table data is as below:
+
+```
+[{
+   id: 1,
+   personalInfo: {
+     fullName: "John Doe",
+     phone: { number: "9876543210" },
+     email: "a@b.com"
+   },
+   userId: "A",
+   accountStatus: 1,
+   createdAt: "22/05/2019",
+   profileImage: "https://www.kindpng.com/picc/m/690-6904538_men-profile-icon-png-image-free-download-searchpng.png"
+}]
+```
+
+Then configuration object should be as below:
+
+```
+headerFormat: {
+    profileImage: {
+      head: "Photo", // column header to be displayed
+      key: "profileImage", // key written in the table data, same should be present as the key for the headerFormat
+      image: true, // to display image in the column
+      altImageText: "profile" // alternate text for the alt attribute of the img tag
+    }, // configuation for image type data
+    userId: {
+      head: "User Id", // column header to be displayed
+      key: "userId", // key written in the table data, same should be present as the key for the headerFormat
+      isLink: true, // to display a link in the column
+      linkTo: "/users/details", // path where to navigate once clicked on the link - query or param will be concatenated after this (only param or query can be sent, not both) 
+      query: ["id", "userId"], // send this if you want multiple query params to send in the url - these are the keys of the table data for which query params will be displayed
+      queryTextToDisplay: ["userId", "customerId"], // send this if you want multiple query params to send in the url - these are the texts which will be displayed in the url
+      sort: true, // if sort by userId column is required then pass it
+      option: [
+        {
+          type: "DESC",
+          isActive: false
+        },
+        {
+          type: "ASC",
+          isActive: false
+        }
+      ], //  you have to pass option array as displayed for the sorting functionality, type should be "ASC" & "DESC"
+      // param: "id", // send this if you want single param to send in the url - this is the key of the table data for which param will be displayed
+      // param: ["id", "userId"], // send this if you want multiple params to send in the url - these are the keys of the table data for which params will be displayed
+      // query: "id", // send this if you want single query param to send in the url - this is the key of the table data for which query param will be displayed
+      // queryTextToDisplay: "userId" // send this if you want single query param to send in the url - this text wiil be displayed in the url
+    }, // configuartion for linked text type data, you can send query or param with the data (not both at this moment), 
+    // sort option is also available, you have to send option array as displayed for the sorting functionality
+    "personalInfo.fullName": {
+      head: "User Name",
+      key: ["personalInfo", "fullName"],
+      populate: true,
+      sort: true,
+      option: [
+        {
+          type: "DESC",
+          isActive: false
+        },
+        {
+          type: "ASC",
+          isActive: false
+        }
+      ],
+      filterObject: {
+        type: "TEXT",
+        placeholder: "Enter Name",
+        value: ""
+      }
+    }, // configuaration for normal text with the key wrapped within an object (only a single object wrapper), for this you have to pass populate as true, also filter with text input is available
+    "personalInfo.email": {
+      head: "Email",
+      key: ["personalInfo", "email"],
+      populate: true,
+      sort: true,
+      option: [
+        {
+          type: "DESC",
+          isActive: false
+        },
+        {
+          type: "ASC",
+          isActive: false
+        }
+      ],
+      filterObject: {
+        type: "SELECT",
+        list: [{
+          key: "-1", // please send the 1st element key as "-1"
+          value: "Select Email"
+        }, {
+          key: "1",
+          value: "a@b.com"
+        }, {
+          key: "2",
+          value: "c@b.com"
+        }],
+        selectedItem: {
+          key: "-1",
+          value: "Select Email"
+        } // default selected item from the list
+      }
+    }, // configuaration for normal text with the key wrapped within an object (only a single object wrapper), for this you have to pass populate as true, also filter with select dropdown is available
+    accountStatus: {
+      head: "Status",
+      key: "accountStatus"
+    },
+    createdAt: {
+      head: "Joining Date",
+      key: "createdAt",
+      filterObject: {
+        type: "DATE",
+        placeholder: "Enter Date (dd/mm/yyyy)",
+        value: null, // please send value as null initially
+        dateFormat: "dd/MM/yyyy" // please use appropriate date format used in react-datepicker
+      }
+    } // configuaration for normal text with the key wrapped within an object (only a single object wrapper), for this you have to pass populate as true, also filter with date is available
+  }
+```
+
 **uniqueRowKey**
 
 Type: string
 
-Description- this value is used to identify each row with a unique identifier. key present within the table data.
+Description- this value is used to identify each row with a unique identifier. value should be the unique key (by which each item of the array can be differentiated) present within the table data.
 
 Example- 
 
