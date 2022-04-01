@@ -76,7 +76,7 @@ headerFormat: {
       key: "profileImage", // key written in the table data, same should be present as the key for the headerFormat
       image: true, // to display image in the column
       altImageText: "profile" // alternate text for the alt attribute of the img tag
-    }, // configuation for image type data
+    }, // configuration for image type data
     userId: {
       head: "User Id", // column header to be displayed
       key: "userId", // key written in the table data, same should be present as the key for the headerFormat
@@ -99,7 +99,7 @@ headerFormat: {
       // param: ["id", "userId"], // send this if you want multiple params to send in the url - these are the keys of the table data for which params will be displayed
       // query: "id", // send this if you want single query param to send in the url - this is the key of the table data for which query param will be displayed
       // queryTextToDisplay: "userId" // send this if you want single query param to send in the url - this text wiil be displayed in the url
-    }, // configuartion for linked text type data, you can send query or param with the data (not both at this moment), 
+    }, // configuration for linked text type data, you can send query or param with the data (not both at this moment), 
     // sort option is also available, you have to send option array as displayed for the sorting functionality
     "personalInfo.fullName": {
       head: "User Name",
@@ -121,7 +121,7 @@ headerFormat: {
         placeholder: "Enter Name", // placeholder for the input field
         value: "" // value for the input
       } // please pass the filterObject if you want any filter for this column. Here filter by text search is present
-    }, // configuaration for normal text with the key wrapped within an object (only a single object wrapper - please check the result data for better understanding), for this you have to pass populate as true
+    }, // configuration for normal text with the key wrapped within an object (only a single object wrapper - please check the result data for better understanding), for this you have to pass populate as true
     "personalInfo.email": {
       head: "Email",
       key: ["personalInfo", "email"],
@@ -154,7 +154,7 @@ headerFormat: {
           value: "Select Email"
         } // default selected item from the list
       }
-    }, // configuaration for normal text with the key wrapped within an object (only a single object wrapper), for this you have to pass populate as true, also filter with select dropdown is available
+    }, // configuration for normal text with the key wrapped within an object (only a single object wrapper), for this you have to pass populate as true, also filter with select dropdown is available
     accountStatus: {
       head: "Status",
       key: "accountStatus"
@@ -168,7 +168,7 @@ headerFormat: {
         value: null, // please send value as null initially
         dateFormat: "dd/MM/yyyy" // please use appropriate date format used in react-datepicker
       }
-    } // configuaration for normal text with the key wrapped within an object (only a single object wrapper), for this you have to pass populate as true, also filter with date is available
+    } // configuration for normal text with the key wrapped within an object (only a single object wrapper), for this you have to pass populate as true, also filter with date is available
   }
 ```
 
