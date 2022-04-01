@@ -21,6 +21,117 @@ The following features are available:
 10. Hide filter, reorder column, table column selector options if not needed
 11. Positioning reorder column & table column selector options, pagination option according to the table.
 
+### Required Configuration
+
+**visibleColumns**
+
+Type: array of string
+
+Description- Columns to display by default. value should be header texts
+
+Example-
+
+```
+visibleColumns: [
+  "User Name",
+  "Email",
+  "User Id",
+  "Status",
+  "Joining Date",
+  "Photo"
+]
+```
+
+**skip**
+
+Type: number
+
+Description- this value is used for pagination. Default initial value should be 0.
+
+Example- 
+
+```
+skip: 0
+```
+
+**limit**
+
+Type: number
+
+Description- this value is used for pagination. Number of items to be displayed in each page.
+
+Example- 
+
+```
+limit: 5 // 5 rows will be displayed in each page of the table
+```
+### Optional Configuration
+
+**multiSort**
+
+Type: boolean
+
+Description- Default value is false. If you want multiple column sorting option then make it as true.
+
+**Note**: multisort: true option is only available if pagination, filtering, sorting are being handled from server side, not from UI (if allData: false). If you use allData: true, then sort with single column will be applied.
+
+Example- 
+
+```
+multiSort: false
+```
+**filter**
+
+Type: boolean
+
+Description- Default value is false. If you want filter column option then make it as true.
+
+**Note**: filter with multiple column is only available if pagination, filtering, sorting are being handled from server side, not from UI (if allData: false). If you use allData: true, then filter with single column will be applied.
+
+Example- 
+
+```
+filter: true
+```
+
+**pagination**
+
+Type: boolean
+
+Description- Default value is false. If you want pagination option then make it as true.
+
+Example- 
+
+```
+pagination: true
+```
+
+**multipleSelectable**
+
+Type: boolean
+
+Description- Default value is false. If you want select row option & select all rows within a page (to display a checkbox button in the 1st column), then make it as true.
+
+Example- 
+
+```
+multipleSelectable: false
+```
+
+**radioSelectable**
+
+Type: boolean
+
+Description- Default value is false. If you want choose a row option (to display a radio button in the 1st column), then make it as true.
+
+Example- 
+
+```
+radioSelectable: false
+```
+
+**Note**: Please do not use both radioSelectable and multipleSelectable as true.
+
 You can use the below configuration object to display the table according to your need.
 ```
 const initialTableConfig = {
