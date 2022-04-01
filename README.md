@@ -103,8 +103,8 @@ headerFormat: {
     // sort option is also available, you have to send option array as displayed for the sorting functionality
     "personalInfo.fullName": {
       head: "User Name",
-      key: ["personalInfo", "fullName"],
-      populate: true,
+      key: ["personalInfo", "fullName"], // for the key wrapped within an object, you have to pass the array of strings (keys of the data)
+      populate: true, // if the key is wrapper within an object then pass this value as true
       sort: true,
       option: [
         {
@@ -117,11 +117,11 @@ headerFormat: {
         }
       ],
       filterObject: {
-        type: "TEXT",
-        placeholder: "Enter Name",
-        value: ""
-      }
-    }, // configuaration for normal text with the key wrapped within an object (only a single object wrapper), for this you have to pass populate as true, also filter with text input is available
+        type: "TEXT", // for text based filter
+        placeholder: "Enter Name", // placeholder for the input field
+        value: "" // value for the input
+      } // please pass the filterObject if you want any filter for this column. Here filter by text search is present
+    }, // configuaration for normal text with the key wrapped within an object (only a single object wrapper - please check the result data for better understanding), for this you have to pass populate as true
     "personalInfo.email": {
       head: "Email",
       key: ["personalInfo", "email"],
@@ -138,7 +138,7 @@ headerFormat: {
         }
       ],
       filterObject: {
-        type: "SELECT",
+        type: "SELECT", // for filter with dropdown
         list: [{
           key: "-1", // please send the 1st element key as "-1"
           value: "Select Email"
@@ -148,7 +148,7 @@ headerFormat: {
         }, {
           key: "2",
           value: "c@b.com"
-        }],
+        }], // list of options to be displayed in the dropdown
         selectedItem: {
           key: "-1",
           value: "Select Email"
@@ -163,8 +163,8 @@ headerFormat: {
       head: "Joining Date",
       key: "createdAt",
       filterObject: {
-        type: "DATE",
-        placeholder: "Enter Date (dd/mm/yyyy)",
+        type: "DATE", // filter the column by date
+        placeholder: "Enter Date (dd/mm/yyyy)", // placeholder for the date input
         value: null, // please send value as null initially
         dateFormat: "dd/MM/yyyy" // please use appropriate date format used in react-datepicker
       }
