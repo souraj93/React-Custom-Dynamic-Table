@@ -2,6 +2,8 @@
 React-Custom-Dynamic-Table is an all in one table component where you can have most used table functionalities like sorting, filtering, pagination.
 You can configure the table component by passing necessary values to the component as props.
 
+### Demo [Link](https://souraj93.github.io/React-Custom-Dynamic-Table/)
+
 The following features are available:
 1. Display Normal text, link, image in a column
 2. Sorting table column (single column sort & multiple column sort)
@@ -578,6 +580,26 @@ Example-
 ```
 <CustomDynamicTable
    paginationCurrentPage={1}
+/>
+```
+
+Here is the example for the Table component to use
+
+```
+<CustomDynamicTable
+   tableConfig={tableConfig} // table configuration object
+   updateTableConfig={updateTableConfig} // function to update the table configuration
+   tableData={[...tableData]} // table data (array of objects)
+   sortData={sortData} // function to get the table column header object by which the table will be sorted and the sort type (ASC/DESC)
+   filterByText={filterByText} // function to get the typed text by which the table to be filtered and the key of the table column header
+   filterBySelection={filterBySelection} // function to get the selected value by which the table to be filtered and the key of the table column header
+   filterByDate={filterByDate} // function to get the selected date by which the table to be filtered and the key of the table column header
+   handlePageChange={handlePageChange} // function to get the current page number of the table
+   handleEachRowSelect={handleEachRowSelect} // function to get the selected/ unselected row details
+   updateTableData={updateTableData} // function to update the table data
+   selectUnselectAllRow={selectUnselectAllRow} // function to get the selected/ unselected row details
+   allData={[...initialTableData]} // this props is used to always have the full data of the table which will not be filtered
+   paginationCurrentPage={1} // props to send the current page number to be selected
 />
 ```
 
