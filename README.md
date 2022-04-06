@@ -410,6 +410,86 @@ Example-
 const [tableData, updateTableData] = useState([...initialTableData]);
 ```
 
+**sortData**
+
+Type: function
+
+Description- Function to receive the column details (header object) for which the sort option clicked and the sort type (ASC/DESC). We can use the arguments to call the API or for any other use.
+
+Required: Function will be optional if you don't have any sorting option displayed in the table.
+
+Arguments- 
+    1. sortedHeaderObj: column details object for which the sort option clicked
+    2. sortType: Type of sorting (ASC/DESC)
+
+Example-
+
+```
+const sortData = (sortedHeaderObj, sortType) => {
+  console.log("sort ---------> ", sortedHeaderObj, sortType);
+};
+```
+
+**filterByText**
+
+Type: function
+
+Description- Function to receive the typed text if there is any search by text (input field) option is present in any table column. We can use the arguments to call the API or for any other use.
+
+Required: Function will be optional if you don't have any filter by text option displayed in the table.
+
+Arguments- 
+    1. searchText: The typed text in the input field
+    2. key: key of the column header object (headerFormat object) for which user is searching
+
+Example-
+
+```
+const filterByText = (searchText, key) => {
+  console.log("filterByText ", searchText, key);
+};
+```
+
+**filterBySelection**
+
+Type: function
+
+Description- Function to receive the selected option text if there is any search by dropdown (select) option is present in any table column. We can use the arguments to call the API or for any other use.
+
+Required: Function will be optional if you don't have any filter by dropdown option displayed in the table.
+
+Arguments- 
+    1. searchText: The selected option text from the dropdown
+    2. key: key of the column header object (headerFormat object) for which user is searching
+
+Example-
+
+```
+const filterBySelection = (searchText, key) => {
+  console.log("filterBySelection ", searchText, key);
+};
+```
+
+**filterByDate**
+
+Type: function
+
+Description- Function to receive the selected date if there is any search by date option is present in any table column. We can use the arguments to call the API or for any other use.
+
+Required: Function will be optional if you don't have any filter by date option displayed in the table.
+
+Arguments- 
+    1. selectedDate: The selected date
+    2. key: key of the column header object (headerFormat object) for which user is searching
+
+Example-
+
+```
+const filterByDate = (selectedDate, key) => {
+  console.log("filterByDate ", selectedDate, key);
+};
+```
+
 You can use the below configuration object to display the table according to your need.
 ```
 const initialTableConfig = {
