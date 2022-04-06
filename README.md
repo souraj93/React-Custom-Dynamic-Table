@@ -490,6 +490,97 @@ const filterByDate = (selectedDate, key) => {
 };
 ```
 
+**handlePageChange**
+
+Type: function
+
+Description- Function to receive the selected page number if the user clicks on any page number from the pagination. We can use the arguments to call the API or for any other use.
+
+Required: Function will be optional if you don't have pagination option displayed in the table.
+
+Arguments- 
+    1. selectedPageNumber: The selected page number
+
+Example-
+
+```
+const handlePageChange = (selectedPageNumber) => {
+  console.log("handlePageChange ", selectedPageNumber);
+};
+```
+
+**handleEachRowSelect**
+
+Type: function
+
+Description- Function to receive the selected row details if the user clicks on the checkbox or radio button from the first column (if multipleSelectable or radioSelectable is true). We can use the arguments to call the API or for any other use.
+
+Required: Function will be optional if you don't have option to choose a table row using radio button or checkbox.
+
+Arguments- 
+    1. clickedRowItem: The selected row object
+    2. updatedDataArray: The updated table data
+
+Example-
+
+```
+const handleEachRowSelect = (clickedRowItem, updatedDataArray) => {
+  console.log("handleEachRowSelect ", clickedRowItem, updatedDataArray);
+};
+```
+
+**selectUnselectAllRow**
+
+Type: function
+
+Description- Function to receive whether the user has checked/ unchecked the Select All option (if multipleSelectable is true) for a particular page number. We can use the arguments to call the API or for any other use.
+
+Required: Function will be optional if you don't have option to choose a table row using checkbox.
+
+Arguments- 
+    1. allRowSelected: true/ false will be returned if the user check/ uncheck the select all option for a particular page number
+    2. currentPage: The page number for which the Select All option is checked/ unchecked
+
+Example-
+
+```
+const selectUnselectAllRow = (allRowSelected, currentPage) => {
+  console.log("selectUnselectAllRow ", allRowSelected, currentPage);
+};
+```
+
+**allData**
+
+Type: array
+
+Description- This props is used to always have the full data of the table which will not be filtered. We need to send the table data as the value to the props.
+
+Required: This is required if allData is set to true within the table configuration object (tabelConfig).
+
+Example-
+
+```
+<CustomDynamicTable
+   allData={[...initialTableData]}
+/>
+```
+
+**paginationCurrentPage**
+
+Type: number
+
+Description- This props is used to send the current page number to the component.
+
+Required: Optional.
+
+Example-
+
+```
+<CustomDynamicTable
+   paginationCurrentPage={1}
+/>
+```
+
 You can use the below configuration object to display the table according to your need.
 ```
 const initialTableConfig = {
