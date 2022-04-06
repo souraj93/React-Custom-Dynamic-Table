@@ -360,6 +360,56 @@ Example-
 paginationPosition: "top-left"
 ```
 
+### Functions and variables to send as props to the component
+
+**tableConfig**
+
+Type: object
+
+Description- The table configuration object. We need to update this object from the Table component, so it is better to store this object as a state variable and pass that state variable as props to the component.
+
+Example-
+
+```
+const [tableConfig, updateTableConfig] = useState({ ...initialTableConfig });
+```
+
+**updateTableConfig**
+
+Type: function
+
+Description- Function to update the state variable for the table configuartion. Basically it is the callback function for the useState hook.
+
+Example-
+
+```
+const [tableConfig, updateTableConfig] = useState({ ...initialTableConfig });
+```
+
+**tableData**
+
+Type: array
+
+Description- The table data array. We need to update this array from the Table component, so it is better to store this array as a state variable and pass that state variable as props to the component.
+
+Example-
+
+```
+const [tableData, updateTableData] = useState([...initialTableData]);
+```
+
+**updateTableData**
+
+Type: function
+
+Description- Function to update the state variable for the table data. Basically it is the callback function for the useState hook.
+
+Example-
+
+```
+const [tableData, updateTableData] = useState([...initialTableData]);
+```
+
 You can use the below configuration object to display the table according to your need.
 ```
 const initialTableConfig = {
